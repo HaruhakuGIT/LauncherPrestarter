@@ -26,3 +26,12 @@ jobs:
       run: msbuild -p:Configuration=Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Create artifacts
+      run: |
+          mkdir artifacts
+          copy . /artifacts
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v1
+      with:
+          name: GravitLauncher
+          path: artifacts
