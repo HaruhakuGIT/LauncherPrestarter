@@ -29,7 +29,7 @@ jobs:
     - name: Create artifacts
       run: |
           mkdir artifacts
-          cp . /artifacts
+          cp -r . /artifacts
     - name: Upload artifacts
       uses: actions/upload-artifact@v1
       with:
